@@ -57,7 +57,7 @@ class InteractiveRecord
     key = hash.keys[0]
     value = hash.values[0]
     sql = <<-SQL
-    SELECT * FROM #{self.table_name} WHERE #{key} = #{value}
+    SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}''
     SQL
      DB[:conn].execute(sql)
   end
